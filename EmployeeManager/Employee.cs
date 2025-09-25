@@ -44,5 +44,10 @@ namespace EmployeeManager
         {
             return id.Length == 3 && char.IsLetter(id[0]) && char.IsDigit(id[1]) && char.IsDigit(id[2]);
         }
+
+        public static bool IsValidHours(int hours)
+        {
+            return hours > 0 && hours <= 100;
+        }
     }
 }

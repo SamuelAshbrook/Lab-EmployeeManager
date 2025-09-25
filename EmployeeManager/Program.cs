@@ -3,8 +3,9 @@ using System;
 
 string name = "";
 string id = "";
+int hours = 0;
 
-// Get employee details from user input
+// Get employee name
 while (true)
 {
     Console.Write("Employee Name: ");
@@ -19,6 +20,7 @@ while (true)
     }
 }
 
+// Get employee ID
 while (true)
 {
     Console.Write("Employee ID: ");
@@ -35,8 +37,22 @@ while (true)
     }
 }
 
-Console.Write("Hours Worked: ");
-int hours = int.Parse(Console.ReadLine());
+// Get hours worked
+while (true)
+{
+    Console.Write("Hours Worked: ");
+    hours = int.Parse(Console.ReadLine());
+
+    if (Employee.IsValidHours(hours))
+    {
+        // Valid hours, exit the loop
+        break;
+    }
+    else
+    {
+        Console.WriteLine("Invalid hours worked. Please enter a number between 1 and 100.");
+    }
+}
 
 // Create an Employee object
 Employee employee = new Employee(name, id, hours);
