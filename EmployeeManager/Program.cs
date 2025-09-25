@@ -1,11 +1,23 @@
 ﻿using EmployeeManager;
 using System;
 
-// Get employee details from user input
-Console.Write("Employee Name: ");
-string name = Console.ReadLine();
+string name = "";
+string id = "";
 
-string id;
+// Get employee details from user input
+while (true)
+{
+    Console.Write("Employee Name: ");
+    name = Console.ReadLine();
+    if (Employee.IsValidName(name))
+    {
+        break; // Valid name, exit the loop
+    }
+    else
+    {
+        Console.WriteLine("Invalid name. Please enter a name between 1 and 50 characters.");
+    }
+}
 
 while (true)
 {
@@ -13,7 +25,7 @@ while (true)
     id = Console.ReadLine();
 
     // Validate that the ID has a letter followed by two digits
-    if (id.Length == 3 && char.IsLetter(id[0]) && char.IsDigit(id[1]) && char.IsDigit(id[2]))
+    if (Employee.IsValidId(id))
     {
         break; // Valid ID, exit the loop
     }

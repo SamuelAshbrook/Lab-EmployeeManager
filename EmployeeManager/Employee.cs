@@ -34,5 +34,15 @@ namespace EmployeeManager
         {
             return hoursWorked * hourlyRate;
         }
+
+        public static bool IsValidName(string name)
+        {
+            return name.Length > 0 && name.Length <= 50;
+        }
+
+        public static bool IsValidId(string id)
+        {
+            return id.Length == 3 && char.IsLetter(id[0]) && char.IsDigit(id[1]) && char.IsDigit(id[2]);
+        }
     }
 }
