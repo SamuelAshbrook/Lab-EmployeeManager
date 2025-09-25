@@ -10,12 +10,12 @@ namespace EmployeeManager
     {
         // Private fields for employee details
         private string employeeName;
-        private int employeeId;
-        private double hoursWorked;
+        private string employeeId;
+        private int hoursWorked;
         private double hourlyRate;
 
         // Constructor to initialize employee details
-        public Employee(string name, int id, double hours)
+        public Employee(string name, string id, int hours)
         {
             employeeName = name;
             employeeId = id;
@@ -29,8 +29,8 @@ namespace EmployeeManager
             return $"{employeeName} ({employeeId})";
         }
 
-        // Calculate and return the employee's pay
-        public double CalculatePay()
+        // Calculate and return the employee's weekly wage
+        public double CalculateWeeklyWage()
         {
             return hoursWorked * hourlyRate;
         }
